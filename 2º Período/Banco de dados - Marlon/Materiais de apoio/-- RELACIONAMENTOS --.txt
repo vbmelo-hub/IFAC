@@ -1,0 +1,9 @@
+-- RELACIONAMENTOS --
+
+1 para 1 : Uma tabela - Aula: 30-01
+
+1 para 0 : Duas tabelas - Aula: 2_v2
+
+1 para N : Duas tabelas - Aula 03-02
+
+N para N : Três tabelas (Ninguém vai herdar chave de ninguém) Aula: 06-02

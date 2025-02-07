@@ -1,0 +1,235 @@
+-- DESENVOLVIMENTO WEB HTML BASICO --
+
+site favicon.io: Conversor
+
+============= CABEÇA DO SITE =============
+
+<!DOCTYPE html></html> : 
+- Está informando que a página está no formato html 5 e dando inicio a uma página em branco.
+
+<html lang="pt-BR"> :
+- Faz com que o site apareça nas pesquisas brasileiras.
+
+<head></head> :
+Define as configurações da cabeça do site, como as informações que estão citadas abaixo.
+
+<meta charset="UTF-8"> :
+- Informa os tipos de caracteres que serão utilizados.
+
+content="width=device, initial-scale=1.0"> :
+- Faz com que o site preencha todo o espaço do dispositivo.
+
+<title></title> :
+- Define o título da aba do site.
+
+============= CORPO DO SITE =============
+
+<body></body> :
+- Define o começo das alterações do site em branco. O corpo do site, onde estarão os textos.
+
+<h1></h1> :
+- Titulos de texto, quanto maior o numero, menor a fonte do título.
+
+<p></p> :
+- Cria paragráfos.
+
+<!-- --> :
+- Comentários.
+
+<br> : 
+- Quebra de linha no texto.
+
+============= SIMBOLOS =============
+
+&lt; (Less than) :
+- Menor que.
+
+&gt; (Greater than):
+- Maior que.
+
+<hr> :
+- Cria uma linha horizontal no site.
+
+&reg; and &copy; and &trade;
+- Marca registrada e Copyright e TM.
+
+&euro; and &pound; and &yen; and &cent; :
+- Dinheiros.
+
+&Delta; :
+- Delta e delta.
+
+&uparrow; and &uarr; :
+- Seta pra cima.
+
+============= FORMATAÇÃO DO TEXTO =============
+
+shift + p :
+- Abbreviation.
+
+shift + tab :
+- Voltar o texto para trás.
+
+lorem : 
+- Cria um texto qualquer
+
+<b> </b> :
+- Negrito.
+
+<Strong> </strong> :
+- Negrito.
+
+<i> </i> :
+- Italico.
+
+<em> </em> :
+- Ênfase.
+
+<mark> </mark> :
+- Marca texto.
+
+<small> </small> :
+- Texto pequeno.
+
+<del> </del> :
+- Texto riscado.
+
+<ins> </ins> :
+- Texto sublinhado.
+
+<sup> </sup> :
+- Texto pra cima.
+
+<sub> </sub> :
+- Texto pra baixo.
+
+<code> </code> :
+- Formatação melhor para ler códigos.
+
+<pre> </pre> :
+- Considera os espaços e quebras de linha.
+
+<q> </q> :
+- Citação.
+
+<blockquote cite=""> </blockquote> :
+- Citação com endereçamento.
+
+<abbr title=""> </abbr> :
+- Mostra o significado das abreviações.
+
+<bdo> dir="rtl"</bdo> :
+- Texto invertido
+
+
+============= LISTAS ORDENADAS E NÃO ORDENADAS =============
+
+<ol> </ol> : Linha ordenada - Cria um bloco de lista ordenada.
+
+<ol type=""> </ol> :
+- Pode-se definir o tipo da lista.
+
+<ol type="" start=""> </ol> :
+- Tipo de lista e onde começa.
+
+<li> </li> : (opcional)
+- List item individualmente.
+
+<ul> </ul> : Lista não ordenada - Cria um bloco de lista não ordenada.
+
+<ul type=""> </ul> :
+- Pode-se definir o tipo de lista.
+
+============= LISTAS MISTAS E DE DEFINIÇÃO =============
+
+<ol> 
+     <li>Antigas</li>
+     <ol type="a">
+         <li>Clipper</li>
+         <li>Visual Basic</li>
+     </ol>
+     <li>Novas</li>
+     <ol type="a" start="5">
+         <li>PHP</li>
+         <li>Python</li>
+     </ol>
+</ol>
+
+<dl> </dl> :
+- Lista de definição, utilizada para abrir a função.
+
+<dt> </dt> :
+- Termo.
+
+<dd> </dd> :
+- Descrição.
+
+============= LINKS E ANCORAS =============
+
+iana.org :
+- Todos os tipos de arquivo para download.
+
+<a href="" target="_blank" rel="external"> </a> :
+- Link externo.
+
+<a href="" rel="prev">text</a> :
+- Link interno primeira página.
+
+<a href="" rel="next">text</a> :
+- Link interno segunda página.
+
+<a href="" rel="nofollow">text</a> :
+- Não manda lá dentro.
+
+<a href="" rel="next" target="_self">text</a> :
+- Navegando dentro da própria página.
+
+../ :
+- Volte uma pasta.
+
+./ :
+- Mesma pasta.
+
+<a href="exemplo/exemplo.pdf" download="exemplo.pdf" type="aplication/pdf">text</a> :
+- Abertura do pdf.
+
+<a href="exemplo/exemplo.zip" download="exemplo.zip" type="aplication/zip">text</a> :
+- Download do arquivo em zip
+
+============= IMAGENS QUE SE ADAPTAM =============
+
+<picture> </picture> :
+- Avisa que vai aparecer uma imagem dentro do bloco.
+
+<source media="(max-width: 750px)" srcsets="" type="image/png">
+- Celular (P).
+
+<source media="(max-width: 1050px)" srcsets="" type="image/png">
+- Torna a imagem flexível. Tem que ser feito acima do cod da imagem (M).
+
+obs: A ordem dos source tem que ser do maior para o menor, indo para cima.
+
+<img src="" alt="Imagem flexivel">
+- Imagem original (G).
+
+============= AUDIOS =============
+
+<áudio src="" controls autoplay> </audio> :
+- Adiciona áudio.
+
+outra forma:
+
+<audio preload="metadata" autoplay controls>
+    <source src="" type="audio/mpeg">
+    <source src="" type="audio/ogg">
+    <source src="" type="audio/wav">
+</audio>
+
+============= VIDEOS =============
+
+HandBrake : Converter vídeos
+
+<video src="" width=""> </video>
+- Aloca vídeo local no site.
+
+Videos externos: Basta copiar como incorporar no vídeo do youtube, e o código virá pronto.

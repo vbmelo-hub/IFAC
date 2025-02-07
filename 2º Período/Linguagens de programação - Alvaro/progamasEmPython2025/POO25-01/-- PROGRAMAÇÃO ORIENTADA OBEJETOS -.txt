@@ -1,0 +1,22 @@
+-- PROGRAMAÇÃO ORIENTADA OBEJETOS --
+
+Básico:
+Programação orientada objeto em python refere-se ao ato de criar classes(Objestos) que terão características gerais e próprias para cada classe. Com atributos(características do objeto) e métodos(funções) do objeto.
+
+Funcionamento:
+Para iniciar a POO é necessário primeiramente declarar o objeto utilizando "class". Como no exemplo a baixo:
+
+class ControleRemoto:
+
+E em seguida declarar suas características gerais dessa classe    :
+
+class ControleRemoto:
+	def __init__(self, largura, altura, profundidade, cor)
+		self.cor = cor
+		self.altura = altura 
+		self.profundidade = profundidade
+		self.largura = largura	
+
+A "def" declarada acima trata-se do método construtor do nosso objeto, ou seja, aquele onde serão declaradas as características do nosso objeto.
+
+O "self" declarado como atributo em nossa classe construtora, refere-se ao próprio objeto, ou seja, refere-se ao Controle remoto. Como se fosse "controle tem, altura, largura, profundidade, cor".

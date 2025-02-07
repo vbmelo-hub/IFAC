@@ -1,0 +1,210 @@
+-- SISTEMAS OPERACIONAIS 27-01-25 --
+
+Conteúdo da prova: TUDO daqui pra frente.
+Possíveis questões da prova: 
+Fragmentação interna x externa 
+Questão utilizando paragrafo
+
+Conteúdo da aula:
+CONCEITOS DE MEMORIA
+
+- Memória Principal (MP): Memoria volátil que, Contem os programas em execução (processos) Exemplo: "Memória RAM" ou "Random Accsess Memory";
+
+- Memória secundária: Memória não volátil, dados que estão armazenados perduram quando há interrupção de energia. Exemplo: "HDD/SSD".
+
+- Registradores: Os registradores são pequenas unidades de memória localizadas diretamente dentro do processador (CPU). Eles armazenam dados temporários que a CPU está processando no momento.
+
+- Memória cache: Funciona como um "estoque temporário" de dados frequentemente acessados, para evitar que a CPU precise acessar a RAM com frequência.
+
+- Memória ROM: Memória somente de leitura, geralmente a BIOS é armazenado nesta memória. Sua capacidade de leitura, velocidade e tamanho não importam muito para um bom desempenho no computador. A memória ROM está localizada na placa mãe, integrada a mesma. Então não dá para retirar facilmente.
+
+-------------------------------------------------------------------------------------------
+
+HIERARQUIA DE MEMORIA
+A hierarquia de memória descreve os diferentes tipos de memória de um sistema de computação, organizados com base em sua velocidade, custo e capacidade.
+
+1º Registradores
+2º Memória cache 
+3º Memória principal 
+4º Memória secundária
+
+A memória ROM não faz parte da hierarquia por conta de ser uma memória que é utilizada somente em um curto tempo no momento em que o computador está ligando para que seja carregado a BIOS, fora não possuir os mesmos aspectos das outras memórias.
+
+-------------------------------------------------------------------------------------------
+
+MMU / Memory Management Unit (Unidade de Gerenciamento de Memoria)
+Trata-se de um componente, geralmente integrado ao processador, que desempenha um papel essencial no gerenciamento da memória de um sistema computacional. Ele é responsável por traduzir endereços de memória virtual em endereços de memória física.
+
+PRINCIPAIS FUNÇÕES DO MMU
+1º Tradução de endereços: 
+- O sistema operacional e os programas utilizam endereços virtuais para acessar a memoria. A MMU converte esses endereços virtuais em endereços físicos, que correspondem aos locais reais na RAM.
+- Isso permite que diferentes processos usem o mesmo espaço de endereçamento virtual sem interferirem uns nos outros.
+
+2º Proteção de Memória:
+- A MMU impede que os processos acessem áreas de memoria que não foram atribuídas a eles, garantindo a segurança do sistema.
+- Se um programa tenta acessar uma área de memória não permitida, ocorre uma exceção chamada page fault.
+
+3º Paginação e Segmentação: 
+- Paginação: A memória é dividia em blocos fixos chamados páginas. A MMU usa uma tabela de páginas para rastrear onde essas páginas estão na RAM.
+- Segmentação: A memoria pode ser dividida em segmentos de tamanhos variáveis, como código, pilha e dados. A MMU ajuda a acessar e proteger esses segmentos.
+
+4º Memória virtual/Lógico:
+- A MMU permite que o sistema operacional use memória virtual, uma técnica que simula mais memória do que está fisicamente disponível, utilizando o disco rígido ou SSD como extensão da RAM. Uma memoria de endereço logico é transformado em endereço físico por meio da soma do endereço lógico com o registrador base. 
+
+5º Cache de Tradução (TLB - Translation Lookaside Buffer):
+- A MMU frequentemente incorpora um TLB, que é uma pequena cache que armazena mapeamentos recentes de endereços virtuais para físico, melhorando a velocidade de tradução.
+
+PORQUE A MMU É IMPORTANTE?
+- Eficiência: Ela permite que programas usem endereços virtuais contínuos, mesmo que a memória física seja fragmentada.
+- Multitarefa: Garante que vários processos possam coexistir sem interferir uns nos outros.
+- Segurança: Protege áreas críticas do sistema operacional e evita que os programas maliciosos acessem memória não autorizada.
+- Flexibilidade: Habilita a execução de programas maiores que a memória física disponível.
+
+ONDE ESTÁ LOCALIZADA?
+- Em um sistema moderno, a MMU é integrada diretamente ao processador. Em processadores mais antigos, ou especializados, ela podia ser um chip separado.
+
+-------------------------------------------------------------------------------------------
+
+PARTIÇÕES FIXAS
+São um método de gerenciamento de memória utilizado em sistemas operacionais mais antigos ou simples. Nesse esquema, a memoria principal (RAM) é dividida em um numero de partições de tamanhos pré-determinados, antes mesmo da execução dos programas. Cada partição é destinada a armazenar um único processo.
+
+- Forma mais simples de gerencia de memória;
+- Memoria dividida em uma parte para o SO e parte para os processos de usuários.
+- A parte de usuário é dividida em várias partes de tamanho fixo para vários processos.
+
+Problema - Dificilmente  um processo vai ter exatamente o tamanho da partição.
+
+DESVANTAGENS DAS PARTIÇÕES FIXAS:
+1º Fragmentação interna:
+- Se um processo precisar de menos memoria do que o tamanho da partição, o espaço não utilizado é desperdiçado.
+- Por exemplo, se uma partição tem 1 MB e o processo ocupa 512KB, 512KB são inutilizados.
+
+2º Subutilização da Memoria:
+- Se o número de processos for menor que o número de partições, algumas partições permanecerão vazias.
+
+3º Tamanho inflexível:
+- Processos que exigem mais memória do que o tamanho de qualquer partição não podem ser executados, mesmo que haja memoria disponível em outras partições.
+
+4º Configuração inicial crítica:
+- Definir tamanhos adequados para as partições é um desafio, pois depende do conhecimento prévio dos requisitos de memoria dos processos.
+
+Curiosidade: Esse tipo de processo é menos eficiente para os sistemas modernos. Então hoje, sistemas operacionais usam esquemas mais avançados, como a memória virtual e gerenciamento dinâmico. Ou seja, sistemas modernos utilizam o MMU.
+
+-------------------------------------------------------------------------------------------
+
+PARTIÇÕES VARIAVEIS 
+São uma técnica de gerenciamento de memoria em que a memoria principal é dividida em blocos de tamanhos variáveis, de acordo com as necessidades dos processos em execução. Diferentemente das partições fixas, esse esquema é mais flexível, permitindo que cada processo ocupe exatamente a quantidade de memoria que necessita (dentro dos limites disponíveis), reduzindo a fragmentação interna, mas introduzindo o problema da fragmentação externa.
+
+COMO FUNCIONAM AS PARTIÇÕES VARIAVEIS
+1º Tamanho dinâmico:
+- A memoria principal não é dividida em partições fixas. Em vez disso, os blocos de memoria são criados dinamicamente, conforme os processos são carregados.
+
+2º Alocação por demanda:
+- Quando um processo solicita memoria, o sistema operacional encontra um espaço livre grande o suficiente para acomodar o processo.
+
+3º Liberação dinâmica:
+- Quando um processo termina, a memória ocupada por ele é liberada, deixando um "buraco" (espaço livre) na memória.
+
+4º Fragmentação externa:
+- Como os blocos de memoria liberados podem ser de tamanhos diferentes e distribuídos aleatoriamente, podem surgir lacunas na memoria, tornando-a subutilizada.
+
+VANTAGENS DAS PARTIÇÕES VARIAVEIS
+1º Redução da fragmentação interna:
+- Como os blocos tem tamanho ajustados as necessidades dos processos, há menos desperdício de espaço dentro das partições.
+
+2º Melhor utilização de memória:
+- Permite alocar memoria para processos de diferentes tamanhos, sem a limitação de partições fixas.
+
+3º Flexibilidade:
+- Adapta-se dinamicamente às necessidades de diferentes processos.
+
+DESVANTAGENS DAS PARTIÇÕES VARIAVEIS 
+1º Fragmentação externa
+- A memoria pode ficar fragmentada em pequenos blocos, não contíguos, dificultando a alocação de processos maiores.
+
+2º Maior complexidade:
+- Gerenciar a alocação e a liberação de memoria requer algoritmos mais sofisticados, como:
+ - First Fit: Aloca o primeiro bloco que seja grande o suficiente.
+ - Best FIt: Escolhe o menor bloco que atenda ao tamanho do processo, minimizando sobras.
+ - Worst Fit: Escolhe o maior bloco disponível, deixando espaço maior para outros processos.
+ - Circular Fit: Refere-se a um processo matemático usado para ajustar ou aproximar um conjunto de dados a uma curva circular. Em contextos como análise de dados experimentais, modelagem geométricas ou visão computacional, o objetivo é encontrar os parâmetros de um circulo (centro e raio) que melhor se ajustem aos pontos de dados fornecidos.
+
+3º Sobrecarga do sistema operacional:
+- O sistema precisa rastrear os blocos de memoria livre e alocada, o que aumenta o custo de processamento.
+
+Paragrafo: Unidade de medida que geralmente é definido como tamanho mínimo de uma lacuna.
+ - Como vou saber o tamanho de um paragrafo? Vai estar especificado no enunciado.
+
+Fragmentação interna máxima: Tamanho do paragrafo - 1. (paragrafo MENOS 1)
+ 
+-------------------------------------------------------------------------------------------
+
+Novo conteúdo - SWAPPING
+Nem sempre é possível manter todos os processos na memoria. Swapping é uma técnica de gerenciamento de memoria usada em sistemas operacionais para gerenciar a execução de processos quando a memoria RAM disponível não é o suficiente para acomodar todos os processos em execução. Em vez de manter todos os processos na memoria ao mesmo tempo, o sistema operacional move alguns processos para uma área de armazenamento sucundario (geralmente o disco rígido ou SSD), liberando o espaço na memoria RAM para os outros processos. Quando o processo que foi movido é necessário novamente, ele é trocado de volta para a memoria.
+
+COMO O SWAPPING FUNCIONA?
+1º Movimento de processos para o disco
+- Quando a memoria RAM está cheia, o sistema operacional seleciona um ou mais processos que não estão sendo ativamente utilizados e os move para o disco rígido ou SSD, em uma área chamada swap space ou arquivo de troca.
+
+2º Carregamento de processos para a memoria:
+- Quando um processo que foi trocado para o disco precisa ser executado novamente, o sistema operacional o carrega para a RAM. Para isso, ele pode precisar desalocar outro processo da RAM e move-lo para o disco, se necessário.
+
+3º Trocas continuas:
+- O processo de mover os processos de e para o disco para liberar espaço na memoria pode ocorrer de forma dinâmica e continua, dependendo das necessidades do sistema.
+
+TIPOS DE SWAPPING:
+1º Swapping completo:
+- O processo é completamente movido entre a memoria principal e o disco, onde o sistema salva o estado inteiro do processo. Esse tipo de swapping geralmente envolve a movimentação de um processo completo para o disco e sua recuperação completa quando necessário.
+
+2º Swapping parcial (ou Paging):
+- Em vez de mover processos inteiros, o sistema move páginas ou segmentos do processo para o disco. Essa abordagem é mais eficiente, pois permite que apenas partes do processo sejam trocadas, em vez de movê-lo inteiro.
+
+VANTAGENS DO SWAPPING:
+1º Gerenciamento Eficiente da Memoria:
+- O swapping permite que o sistema operacional use a memoria de forma mais eficiente, alocando memoria apenas para os processos que estão realmente em execução e liberando espaço para novos processos.
+
+2º Execução de muitos processos:
+- Mesmo que a memoria RAM seja limitada, o swapping possibilita a execução de muitos processos simultaneamente, já que os processos podem ser movidos para o disco quando não estão em uso imediato.
+
+3º Flexibilidade:
+- O sistema pode adaptar dinamicamente a quantidade de memoria alocada para diferentes processos, dependendo de suas necessidades.
+
+DESVANTAGENS DO SWAPPING
+1º Desempenho:
+- O acesos ao disco é muito mais lento que o acesso a memoria RAM. Por tanto, a troca de processos entre a memoria e o disco pode diminuir significativamente o desempenho do sistema, especialmente se ocorrer com frequência (isso é conhecido como thrashing).
+
+2º Consumo de recursos:
+- O swapping pode aumentar a sobrecarga do sistema, já que o processo de mover dados entre o disco e a memoria exige tempo de CPU e operação de disco.
+
+3º Thrashing:
+- O thrashing ocorre quando  sistema passa a maior parte do tempo trocando processos entre o disco e a memoria, em vez de realmente executar os processos, isso pode acontecer se muitos processos estiverem sendo carregados e descarregados da memoria rapidamente, o que leva a uma queda drástica de desempenho.
+
+ALTERNATIVAS AO SWAPPING:
+1º Memoria virtual
+2º Cache
+
+-------------------------------------------------------------------------------------------
+PAGINAÇÃO - https://youtu.be/JzQE3NfW7fg?si=aJFE_EP3ilYeh_xQ
+Em razão da necessidade de cada programa ocupar uma área continua;
+Paginação possibilita que um programa ocupe áreas não continuas na memoria física.
+
+A paginação é uma técnica de gerenciamento de memoria usada em sistemas operacionais para dividir a memoria física e a memoria virtual em blocos de tamanho fixo chamados paginas e quadros de pagina. O objetivo da paginação é tornar o gerenciamento de memoria mais eficiente e evitar problemas como a fragmentação externa.
+
+COMO FUNCIONA A PAGINAÇÃO?
+1º Memoria virtual:
+- A memoria virtual é dividida em paginas de tamanho fixo (por exemplo, 4KB ou 8KB). Cada processo tem sua própria memoria virtual que também é dividida em páginas.
+
+2º Memoria física:
+- A memoria física (RAM) também é dividida em quadros de pagina de tamanho igual ao das paginas.
+
+3º Mapeamento de paginas para quadros:
+- O sistema operacional usa estrutura de dados chamada tabela de paginas para mapear paginas da memoria virtual para quadros de memoria física. Essa tabela contem informações sobre onde cada pagina do processo está armazenada na memoria física.
+
+4º Endereçamento virtual e físico:
+- Um endereço logico (ou virtual) gerado por um processo é dividido em dois componentes:
+ - Numero da pagina: Indica a página na memoria virtual =.
+ - Deslocamento: Indica a posição dentro da página.
+- Unidade de gerenciamento de memoria (MMU) converte o numero da pagina para o numero do quadro correspondente na memoria física, e o deslocamento é mantido para determinar a posição exata dentro do quadro.
+
+5º Troca entre memoria virtual e física:
+- Quando uma página não está na memoria física (um evento chamado falha de página), o sistema operacional a carrega da memoria (geralmente o disco rígido) para a memoria RAM.

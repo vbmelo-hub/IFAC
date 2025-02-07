@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- Configuração de caracteres -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Título da página -->
+    <title>GameNews Portal - Lançamentos</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@600;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Link para o arquivo CSS externo -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Cabeçalho do site -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>GameNews Portal</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="reviews.html">Reviews</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#pc">PC</a></li>
+                        <li><a href="#playstation">PlayStation</a></li>
+                        <li><a href="#xbox">Xbox</a></li>
+                        <li><a href="#nintendo">Nintendo</a></li>
+                    </ul>
+                </li>
+                <li><a href="lancamentos.html" class="active">Lançamentos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Barra de Pesquisa -->
+    <div class="search-container">
+        <input type="text" class="search-input" placeholder="Buscar jogos...">
+        <button class="search-button">
+            <i class="fas fa-search"></i> Buscar
+        </button>
+    </div>
+
+    <main>
+        <!-- Próximos Lançamentos -->
+        <section class="destaque">
+            <h2><i class="fas fa-calendar-alt icone"></i>Próximos Lançamentos</h2>
+            <div class="calendario">
+                <table>
+                    <tr>
+                        <th><i class="fas fa-calendar-day icone"></i>Data</th>
+                        <th><i class="fas fa-gamepad icone"></i>Jogo</th>
+                        <th><i class="fas fa-desktop icone"></i>Plataforma</th>
+                        <th><i class="fas fa-tag icone"></i>Gênero</th>
+                    </tr>
+                    <tr>
+                        <td>01/03/2024</td>
+                        <td>Final Fantasy VII Rebirth</td>
+                        <td><i class="fab fa-playstation icone"></i>PS5</td>
+                        <td><span class="tag">RPG</span></td>
+                    </tr>
+                    <tr>
+                        <td>15/03/2024</td>
+                        <td>Dragon's Dogma 2</td>
+                        <td><i class="fas fa-globe icone"></i>Multi</td>
+                        <td><span class="tag">RPG</span> <span class="tag">Ação</span></td>
+                    </tr>
+                    <tr>
+                        <td>25/03/2024</td>
+                        <td>Princess Peach: Showtime!</td>
+                        <td><i class="fab fa-nintendo-switch icone"></i>Switch</td>
+                        <td><span class="tag">Aventura</span></td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <!-- Jogos Mais Esperados -->
+        <section class="mais-esperados">
+            <h2><i class="fas fa-fire icone"></i>Mais Esperados de 2024</h2>
+            <div class="grid-jogos">
+                <article class="jogo-card">
+                    <h3><i class="fas fa-car icone"></i>GTA 6</h3>
+                    <div class="tags">
+                        <span class="tag">Ação</span>
+                        <span class="tag">Mundo Aberto</span>
+                    </div>
+                    <p><i class="far fa-clock icone"></i>Previsão: 2025</p>
+                    <p><i class="fas fa-gamepad icone"></i>Plataformas: PS5, Xbox Series X|S</p>
+                    <p class="descricao">O próximo capítulo da lendária série GTA promete revolucionar os jogos de mundo aberto...</p>
+                    <a href="#" class="link-especial">Mais detalhes</a>
+                </article>
+
+                <article class="jogo-card">
+                    <h3><i class="fas fa-microchip icone"></i>Nintendo Switch 2</h3>
+                    <div class="tags">
+                        <span class="tag">Console</span>
+                        <span class="tag">Híbrido</span>
+                    </div>
+                    <p><i class="far fa-clock icone"></i>Previsão: Final de 2024</p>
+                    <p><i class="fas fa-microchip icone"></i>Nova geração do console híbrido</p>
+                    <p class="descricao">O sucessor do Switch promete gráficos em 4K e retrocompatibilidade...</p>
+                    <a href="#" class="link-especial">Mais detalhes</a>
+                </article>
+
+                <article class="jogo-card">
+                    <h3><i class="fas fa-dragon icone"></i>Senua's Saga: Hellblade II</h3>
+                    <div class="tags">
+                        <span class="tag">Ação</span>
+                        <span class="tag">Aventura</span>
+                    </div>
+                    <p><i class="far fa-clock icone"></i>Previsão: 2024</p>
+                    <p><i class="fab fa-xbox icone"></i>Plataformas: Xbox Series X|S, PC</p>
+                    <p class="descricao">A continuação do aclamado Hellblade promete uma jornada ainda mais intensa...</p>
+                    <a href="#" class="link-especial">Mais detalhes</a>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="footer-content">
+            <div class="redes-sociais">
+                <h4>Siga-nos</h4>
+                <a href="https://x.com/flowgamespdc?t=e7hAVZHJkA0Fic0-t0NlgA&s=09" target="_blank"><i class="fab fa-twitter icone"></i>Twitter</a>
+                <a href="https://www.instagram.com/vinixius_ba/" target="_blank"><i class="fab fa-instagram icone"></i>Instagram</a>
+                <a href="https://www.youtube.com/@FlowGamesPodcast" target="_blank"><i class="fab fa-youtube icone"></i>YouTube</a>
+            </div>
+            <div class="links-uteis">
+                <h4>Links Úteis</h4>
+                <a href="#sobre">Sobre</a>
+                <a href="#contato">Contato</a>
+                <a href="#privacidade">Privacidade</a>
+            </div>
+        </div>
+        <p class="copyright">&copy; 2024 GameNews Portal. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Botão Voltar ao Topo -->
+    <a href="#" class="voltar-topo" id="btnTopo">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script>
+        // Botão Voltar ao Topo
+        const btnTopo = document.getElementById('btnTopo');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                btnTopo.classList.add('visivel');
+            } else {
+                btnTopo.classList.remove('visivel');
+            }
+        });
+
+        // Filtros
+        const filtros = document.querySelectorAll('.filtro-item');
+        filtros.forEach(filtro => {
+            filtro.addEventListener('click', () => {
+                filtros.forEach(f => f.classList.remove('ativo'));
+                filtro.classList.add('ativo');
+            });
+        });
+
+        // Pesquisa
+        const searchInput = document.querySelector('.search-input');
+        const searchButton = document.querySelector('.search-button');
+        
+        searchButton.addEventListener('click', () => {
+            const query = searchInput.value.toLowerCase();
+            // Implementar lógica de pesquisa
+        });
+
+        // Modo Escuro
+        function toggleDarkMode() {
+            document.documentElement.setAttribute('data-theme', 
+                document.documentElement.getAttribute('data-theme') === 'dark' 
+                    ? 'light' 
+                    : 'dark'
+            );
+        }
+    </script>
+</body>
+</html>

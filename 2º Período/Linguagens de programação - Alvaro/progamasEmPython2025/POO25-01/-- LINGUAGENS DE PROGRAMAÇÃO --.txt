@@ -1,0 +1,22 @@
+-- LINGUAGENS DE PROGRAMAÇÃO --
+''' Vinícius Barros de Melo '''
+
+Feito no dia 25-01-25
+Programação Orientada Objetos:
+A programação Orientada Objetos se trata da virtualização/remodelação de objetos do mundo físico
+para software. Como por exemplo:
+Classe: Casa
+Objeto: Mesa Propriedades: Redonda, Madeira.
+
+1º Passo - Criar a classe.
+2º Passo - Criar o objeto a partir da classe.
+3º Passo - Criar funções ou métodos para chamar minha classe construtora.
+
+Vamos fazer uma conta bancaria!
+O que toda conta bancária tem?
+1 - Titular
+2 - Nº da conta
+3 - Nº da agência
+4 - Saldo
+
+***prova POO dia 04/02***

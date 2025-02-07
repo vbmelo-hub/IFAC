@@ -1,0 +1,30 @@
+-- BANCO DE DADOS 30.01.2025 --
+
+Exemplo de criação de banco de dados:
+- CREATE DATABASE Nome_do_banco;
+
+Exemplo de criação de tabela:
+- CREATE TABLE aluno(
+    matricula int(11),
+    nome varchar(255),
+    idade int(2),
+    rua varchar(255),
+    numero varchar(255),
+    PRIMARY KEY (matricula));
+
+Exemplo de criação dentro da tabela: 
+- INSERT INTO Aluno(matricula,nome,idade,rua,numero)
+VALUES(1,'Ana',19,'Rua das Andradas','52')
+
+Exemplo para deletar database e tabela:
+- DROP TABLE nome_tabela;
+- DROP DATABASE nome_banco;
+
+Exemplo de chave estrangeira em tabela:
+- FOREIGN KEY (matricula_alunos) REFERENCES alunos(matricula)
+
+Exemplo para deletar uma única linha da tabela:
+- delete from alunos WHERE matricula = 1
+
+buscando e filtrando :
+- SELECT * FROM socios,dependentes WHERE matricula = matricula_socios AND cod = cod_dependentes; 
