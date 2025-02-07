@@ -7,7 +7,7 @@ class ContaBancaria:
         self.saldo = 0
 
     def mostrar_dados(self):
-        print('=========================================')
+        print('==========================================')
         return  print(f'Titular: {self.titular}\nCPF: {self.cpf}\nConta: {self.conta}\nAgencia: {self.agencia}\nSaldo: R${self.saldo}')
 
     def depositar(self, depositar):
@@ -17,7 +17,7 @@ class ContaBancaria:
     def sacar(self, sacar):
         self.sacar = sacar
         if self.sacar > self.saldo:
-            print('=========================================')
+            print('==========================================')
             print(f'Tentativa de saque realizada sem sucesso\nTentativa de saque no valor de: R${self.sacar}, valor acima do disponivel na conta.\nSaldo atual da conta: R${self.saldo}')
         else:
             self.saldo -= self.sacar
@@ -30,7 +30,7 @@ class ContaPoupanca(ContaBancaria):
     def mostrar_dados(self):
         super().mostrar_dados()
         print(f'Taxa de rendimento: {self.taxa_rendimento}%')
-        print('=========================================')
+        print('==========================================')
 
 pessoa1 = ContaBancaria('Vinicius', '123.456.789-10', 12345, 123456)
 pessoa1.mostrar_dados()
