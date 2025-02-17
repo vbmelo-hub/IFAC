@@ -1,0 +1,36 @@
+Árvore Binária de Busca
+
+- Árvore ordenada de forma que se possa aplicar uma busca binária;
+- Estrutura de dados;
+- Nó;
+- Busca sequêncial é ineficiente;
+- Busca binária;
+- Nó raiz - é o nó inicial no processo de organização da árvore;
+- Todo nó poderá um filho à direita e/ou à esquerda;
+- Folha: todo nó que não possui um nó filho;
+- Grau: o grau da árvore é o grau da raiz, ou seja, é o número de nós, do tipo galho, que saem da raiz;
+- Uma árvore binária é uma árvore de grau 2;
+- Trabalhando com codificação única (chave primária);
+
+- Travessia/Pesquisa em uma árvore binária (busca): a ordem em que os nós são visitados/percorridos:
+
+1. Pesquisa/Percorrimento/Travessia simética (E-R-D):
+- Percorre/visita a subárvore da esquerda, depois nó raiz e depois percorre/visita a subárvore da direita;
+- Ordem: Esquerda -> Raiz -> Direita
+- Ordem da pesquisa - Exemplo: 
+1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7;
+- Exibição em ordem crescente;
+
+2. Pesquisa/Percorrimento/Travessia pré-ordem (R-E-D):
+- Percorre/Visita o nó raiz, depois subárvore da esquerda e depois nsubárvore da direita;
+- Ordem: Raiz -> Esquerda -> Direita;
+- Ordem da pesquisa - Exemplo:
+4 -> 2 -> 1 -> 3 -> 6 -> 5 -> 7
+- Utilizamos para copiar ou serializar a árvore;
+
+3. Pesquisa/Percorrimento/Travessia pós-ordem (E-D-R):
+- Percorre/Visita a subárvore da esquerda, depois a subárvore da direia e depois o nó raiz;
+- Ordem: Esquerda -> Direita -> Raiz;
+- Ordem de pesquisa - Exemplo:
+1 -> 3 -> 2 -> 5 -> 7 -> 6 -> 4
+- Utilizamos para remover nós ou desalocar memória;

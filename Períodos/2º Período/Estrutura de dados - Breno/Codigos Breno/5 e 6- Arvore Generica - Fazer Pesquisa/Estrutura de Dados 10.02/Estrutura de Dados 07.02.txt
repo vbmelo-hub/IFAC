@@ -1,0 +1,18 @@
+- Árvore genérica - poderá possui n filhos;
+- Cada filho poderá se tornar nó de outros m filhos;
+
+- Árvore Binária de Busca
+1) E - R - D
+2) R - E - D
+3) E - D - R
+
+
+Atividades - em quarteto
+
+1 - Lista encadeada - Finalizar código;
+2 - Fila - Finalizar código;
+3 - Pilha - Finalizar código;
+4 - Árvore Binária - Finalizar código;
+5 - Pesquisa sobre árvore genérica - teoria;
+6 - Árvore Genérica - Finalizar código;
+7 - Pesquisa sobre Grafos - Teoria e códigos;

@@ -1,0 +1,6 @@
+- Lista encadeada - 1 ponteiro apontando para o próximo (ponteiro prox);registro (registro que foi atribuído anteriormente);
+- O primeiro registro inserido aponta para NULL;
+
+- Lista duplamente encadeada: temos que controlar prox e ant;
+
+- Tanto em listas encadeadas quanto em listas duplamente encadeadas, cada novo registro inserido será chamado de nó;

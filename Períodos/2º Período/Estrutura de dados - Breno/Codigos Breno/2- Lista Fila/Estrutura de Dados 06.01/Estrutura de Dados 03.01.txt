@@ -1,0 +1,7 @@
+Filas
+
+- Conceito intuitivo;
+- Enfileirar elementos;
+- Primeiro que entrar é o primeiro que sai;
+- FIFO;
+
