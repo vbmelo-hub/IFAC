@@ -31,7 +31,16 @@ function mostrarDados(){
     document.getElementById('cor').value;
     document.getElementById('resposta').style.color = cor;
 
-    let email =
-    document.getElementById('radio').value;
-    document.getElementById('resposta3').innerText = radio;
+    let radio = document.getElementsByName("email");
+    for (let i = 0; i < radio.length; i++) {
+        if (radio[i].checked) {
+            console.log("Escolheu " + radio[i].value)
+        }
+    }
+    let checkboxes = document.getElementsByName('sentido');
+    for(let i=0; i<checkboxes.length;i++){
+        if(checkboxes[i].checked){
+            console.log("Seleciou: " + checkboxes[i].value);
+        }
+    }
 }
