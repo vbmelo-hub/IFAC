@@ -1,4 +1,4 @@
-package SalárioComBonus;
+package SalarioComBonus;
 
 import java.util.Scanner;
 

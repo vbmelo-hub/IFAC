@@ -14,5 +14,6 @@ public class Main {
         numPcs2 = teclado.nextDouble();
         valorUnit2 = teclado.nextDouble();
         System.out.printf("VALOR A PAGAR: R$ %.2f\n", ((numPcs1 * valorUnit1) + (numPcs2 * valorUnit2)));
+        teclado.close();
     }
 }

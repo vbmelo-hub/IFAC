@@ -1,10 +1,10 @@
 package BotasTrocadas;
 import java.util.Scanner;
 
-public class ParesDeBotas {
+public class Main {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int N = sc.nextInt();
+        Scanner ler = new Scanner(System.in);
+        int N = ler.nextInt();
 
         // Assumindo que os tamanhos vão de 30 a 60, por exemplo
         // Índice 0 representa o tamanho 0, vamos usar até tamanho 61
@@ -12,8 +12,8 @@ public class ParesDeBotas {
         int[] direito = new int[61];
 
         for (int i = 0; i < N; i++) {
-            int tamanho = sc.nextInt();
-            char lado = sc.next().charAt(0);
+            int tamanho = ler.nextInt();
+            char lado = ler.next().charAt(0);
 
             if (lado == 'E') {
                 esquerdo[tamanho]++;
@@ -28,5 +28,6 @@ public class ParesDeBotas {
         }
 
         System.out.println(totalPares);
+        ler.close();
     }
 }

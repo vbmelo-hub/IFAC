@@ -1,4 +1,4 @@
-package Animais;
+package Animal;
 
 import java.util.Scanner;
 
