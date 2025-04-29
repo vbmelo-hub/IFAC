@@ -1,0 +1,129 @@
+1.
+CREATE DATABASE escola_db;
+USE escola_db
+CREATE TABLE alunos(
+	id INT PRIMARY KEY,
+    email varchar(50) UNIQUE,
+    idade int CHECK (idade >= 16),
+    nome varchar(50) NOT NULL
+);
+
+2.
+CREATE DATABASE biblioteca_db;
+USE biblioteca_db;
+CREATE TABLE editoras(
+	id INT PRIMARY KEY,
+    nome VARCHAR(100) UNIQUE,
+    cidade VARCHAR(50),
+    email VARCHAR(50)
+);
+
+USE biblioteca_db;
+CREATE TABLE livros(
+	id INT PRIMARY KEY,
+    titulo VARCHAR(50) NOT NULL,
+    autor VARCHAR(50),
+    preco DECIMAL(10,2) CHECK (preco > 0),
+    ano_publicacao INT,
+    id_editora INT,
+    FOREIGN KEY (id_editora) REFERENCES editoras(id)
+);
+
+3.
+CREATE DATABASE vendas_db;
+USE vendas_db;
+CREATE TABLE clientes(
+	id INT PRIMARY KEY,
+    nome VARCHAR(100),
+    email varchar(50),
+    telefone int
+);
+
+USE vendas_db;
+CREATE TABLE pedidos(
+	id INT PRIMARY KEY,
+    data DATE,
+    valor_total DECIMAL(10,2) CHECK (valor_total > 0),
+    id_cliente INT,
+    FOREIGN KEY (id_cliente) REFERENCES clientes(id)
+);
+
+4.
+CREATE DATABASE esportes_db;
+USE esportes_db;
+CREATE TABLE jogadores(
+	id INT PRIMARY KEY,
+    idade INT CHECK(idade >= 16),
+    nome VARCHAR(100) NOT NULL,
+    posicao VARCHAR(30)
+);
+
+5.
+CREATE DATABASE eventos_db;
+USE eventos_db;
+CREATE TABLE eventos(
+	id INT PRIMARY KEY,
+    nome VARCHAR(50),
+    data DATE,
+    local VARCHAR(50),
+    tipo VARCHAR(50) NOT NULL
+);
+
+USE eventos_db;
+CREATE TABLE inscricoes(
+	id INT PRIMARY KEY,
+    id_evento int,
+    nome_participante VARCHAR(50),
+    idade INT CHECK (idade >= 18),
+    FOREIGN KEY (id_evento) REFERENCES eventos(id)
+);
+
+7.
+CREATE DATABASE estoque_db;
+USE estoque_db;
+CREATE TABLE produtos(
+	id INT PRIMARY KEY,
+    nome VARCHAR(50) UNIQUE,
+    preco DECIMAL(10,2) CHECK (preco > 0),
+    estoque INT DEFAULT 0,
+    categoria VARCHAR(50)
+);
+
+8.
+CREATE DATABASE transporte_db;
+USE transporte_db;
+CREATE TABLE motoristas(
+	id INT PRIMARY KEY,
+    nome VARCHAR(50),
+    cnh VARCHAR(9) NOT NULL,
+    data_nascimento date
+);
+
+USE transporte_db;
+CREATE TABLE veiculos(
+	id INT PRIMARY KEY,
+    placa INT UNIQUE,
+    modelo VARCHAR(50),
+    ano DATE CHECK (ano >= 2000),
+    id_motorista INT,
+    FOREIGN KEY (id_motorista) REFERENCES motoristas(id)
+);
+
+9.
+CREATE DATABASE universidade_db;
+USE universidade_db;
+CREATE TABLE professores(
+	id INT PRIMARY KEY,
+    nome VARCHAR(50),
+    salario DECIMAL(10,2) CHECK (salario > 2000),
+    email VARCHAR(50) UNIQUE
+);
+
+USE universidade_db;
+CREATE TABLE disciplinas(
+	id INT PRIMARY KEY,
+    nome VARCHAR(50),
+    carga_horaria INT CHECK (carga_horaria >= 20),
+    id_professor INT,
+    FOREIGN KEY (id_professor) REFERENCES professores(id)
+);
