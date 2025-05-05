@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="app.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <label id="data""></label>
+    <!-- Usado para alterar elemento da página ao clicar-->
+    <button onclick="document.getElementById('data').innerHTML = Date()">Ok</button>
+    <!-- Usado para alterar elemento da página ao passar o mouse em cima, seja aumentar o tamanho de uma imagem ou deixa-la colorida-->
+    <button onmouseover="document.getElementById('data').innerHTML = Date()">Passe o mouse</button> 
+    <!-- Usado para alterar elemento da página ao retirar o mouse de cima-->
+    <button onmouseleave="document.getElementById('data').innerHTML = Date()">Mouse saindo</button> 
+    <!-- Usado para alterar elemento da página ao retirar o mouse de cima do elemento-->
+    <button onmouseout="document.getElementById('data').innerHTML = Date()">Mouse fora</button> 
+    <!-- Usado para alterar elemento da página ao dectar movimento do mouse em cima do elemento-->
+    <button onmousemove="document.getElementById('data').innerHTML = Date()">Mouse movendo</button> 
+    <!-- Usado para alterar elemento da página ao passar o mouse dentro do elemento-->
+    <button onmouseenter="document.getElementById('data').innerHTML = Date()">Mouse Dentro</button> 
+    <!-- Usado para alterar elemento da página ao terminar de clicar no elemento-->
+    <button onmouseup="document.getElementById('data').innerHTML = Date()">Mouse cima</button>
+    <!-- Usado para alterar elemento da página ao clicar-->
+    <button onmousedown="document.getElementById('data').innerHTML = Date()">Mouse baixo?</button> 
+    <!-- Usado para alterar elemento da página ao scrollar em cima do elemento-->
+    <button onmousewheel="document.getElementById('data').innerHTML = Date()">Scroll</button> 
+    
+</body>
+</html>
