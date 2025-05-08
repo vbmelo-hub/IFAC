@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="app.js"></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <!--Quando a tecla levanta realiza uma ação-->
+    Nome:<input type="text" id="nome" onkeyup="myFunction()">
+
+    <label id="tamanho">0</label>
+
+    <!--Quando o componente recebe o foco realiza uma ação-->
+    Idade:<input type="text" id="idade" onfocus>
+
+    <!--Quando o componente sai de foco, realiza uma ação-->
+    Altura:<input type="text" id="idade" onblur="myFunction()">
+
+    <!--Quando o componente troca de valor, realiza uma ação-->
+    Peso:<input type="text" id="nome" onchange="myFunction()">
+</body>
+</html>
