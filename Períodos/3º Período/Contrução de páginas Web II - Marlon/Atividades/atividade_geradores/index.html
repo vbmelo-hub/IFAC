@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercícios de JavaScript</title>
+</head>
+<body>
+  <h2>1) Contagem de Números Aleatórios</h2>
+  <button onclick="contarNumeros()">Gerar e Contar</button>
+  <pre id="resultado1"></pre>
+
+  <h2>2) Remover Números Repetidos</h2>
+  <button onclick="removerRepetidos()">Gerar e Remover Repetidos</button>
+  <pre id="resultado2"></pre>
+
+  <h2>3) Votação para Nome de Cachorro</h2>
+  <input type="text" id="nomeCachorro" placeholder="Digite o nome">
+  <button onclick="votar()">Votar</button>
+  <button onclick="mostrarVotos()">Mostrar Votos</button>
+  <pre id="resultado3"></pre>
+
+  <script>
+    // Exercício 1
+    function contarNumeros() {
+      const contagem = {};
+      for (let i = 0; i < 100; i++) {
+        const num = Math.floor(Math.random() * 100) + 1;
+        contagem[num] = (contagem[num] || 0) + 1;
+      }
+
+      let saida = "";
+      for (let num in contagem) {
+        saida += `${num} - ${contagem[num]} vez(es)\n`;
+      }
+      document.getElementById("resultado1").textContent = saida;
+    }
+
+    // Exercício 2
+    function removerRepetidos() {
+      const numeros = [];
+      for (let i = 0; i < 100; i++) {
+        numeros.push(Math.floor(Math.random() * 100) + 1);
+      }
+
+      const unicos = [...new Set(numeros)];
+
+      document.getElementById("resultado2").textContent =
+        `Originais:\n${numeros.join(" ")}\n\nSem repetição:\n${unicos.join(" ")}`;
+    }
+
+    // Exercício 3
+    const votos = {};
+
+    function votar() {
+      const nome = document.getElementById("nomeCachorro").value.trim();
+      if (nome) {
+        votos[nome] = (votos[nome] || 0) + 1;
+        document.getElementById("nomeCachorro").value = "";
+        alert(`Voto registrado para: ${nome}`);
+      }
+    }
+
+    function mostrarVotos() {
+      let saida = "";
+      for (let nome in votos) {
+        saida += `${nome} - ${votos[nome]} voto(s)\n`;
+      }
+      document.getElementById("resultado3").textContent = saida || "Nenhum voto ainda.";
+    }
+  </script>
+</body>
+</html>
